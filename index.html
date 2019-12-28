@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <script src="Lib/three.js"></script>
+    <script src="Lib/jquery.min.js"></script>
+    <script src="Lib/OrbitControls.js"></script>
+    <script src="Lib/soundjs-0.6.2.min.js"></script>
+
+    <script src="emptyLibJS/ES6/3D/Threejs/Templates/Game.js"></script>
+
+    <script src="Game/OD3.js"></script>
+
     <title>Odessa Defender III</title>
     <style>
       body {
@@ -47,6 +56,20 @@
       };
 
       animate();
+    </script>
+    <div id="gameContainer"></div>
+    <script>
+      $(document).ready(function() {
+        var app = new OD3();
+        //app.setContainer('app');
+        //console.log(app);
+        /*app.init();
+        function handleResize(){
+          app.handleResize();
+        }
+        app.handleResize();
+        window.addEventListener('resize', handleResize, false);*/
+      });
     </script>
   </body>
 </html>

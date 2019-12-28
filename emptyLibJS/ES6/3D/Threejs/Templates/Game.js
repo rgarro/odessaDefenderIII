@@ -1,7 +1,7 @@
 /**
  * Threejs es6 Game Template
  *
- * @author <rgarro@gmail.com>
+ * @author Rolando <rgarro@gmail.com>
  */
 class Game {
   constructor() {
@@ -9,7 +9,7 @@ class Game {
     this.renderer = null;
     this.scene = null;
     this.camera = null;
-    this.ini_camera_x = 15;
+    /*this.ini_camera_x = 15;
     this.ini_camera_y = 16;
     this.ini_camera_z = 13;
     this.is_camera_set = false;
@@ -22,6 +22,6 @@ class Game {
     this.l = new Light();
     if (typeof arguments[0] != "undefined") {
       this.setContainer(arguments[0]);
-    }
+    }*/
   }
 }
