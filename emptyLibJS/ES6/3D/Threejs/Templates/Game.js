@@ -24,4 +24,8 @@ class Game {
       this.setContainer(arguments[0]);
     }*/
   }
+
+  init() {
+    this.scene = new THREE.Scene();
+  }
 }
