@@ -27,7 +27,7 @@
   </head>
   <body>
     <script>
-      var scene = new THREE.Scene();
+      /*var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
@@ -55,7 +55,7 @@
         renderer.render(scene, camera);
       };
 
-      animate();
+      animate();*/
     </script>
     <div id="gameContainer"></div>
     <script>
@@ -64,12 +64,12 @@
         //app.setContainer('app');
         //console.log(app);
         app.init();
-        /*
-        function handleResize(){
+
+        function handleResize() {
           app.handleResize();
         }
         app.handleResize();
-        window.addEventListener('resize', handleResize, false);*/
+        window.addEventListener("resize", handleResize, false);
       });
     </script>
   </body>
