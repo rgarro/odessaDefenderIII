@@ -1,13 +1,11 @@
 class OD3 extends Game {
   constructor() {
     super();
-    this.container = "gameContainer"; //el Honda de fabio esta detras del evergreen por la carcel de san luis ..
-    console.log("here ...");
+    this.container = "gameContainer";
   }
 
   init() {
     super.init();
-    console.log(this.scene);
   }
 
   postInit() {
@@ -78,11 +76,43 @@ class OD3 extends Game {
     };*/
   }
 
-  floorAndSky() {}
+  floorAndSky() {
+    // FLOOR
+    this.floorTexture = new THREE.TextureLoader().load(this.floorTextureUrl);
+    this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
+    this.floorTexture.repeat.set(10, 10);
+    var floorMaterial = new THREE.MeshBasicMaterial({
+      map: this.floorTexture,
+      side: THREE.DoubleSide
+    });
+    var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+    var floor = new THREE.Mesh(floorGeometry, floorMaterial);
+    floor.name = "floor";
+    floor.position.y = -0.5;
+    floor.rotation.x = Math.PI / 2;
+    if (this.enable_shadows) {
+      floor.receiveShadow = true;
+    }
+    this.scene.add(floor);
+    //sky
+    /*  var skyboxGeometry = new THREE.BoxGeometry(10000, 10000, 10000);
+     var skyboxMaterial = new THREE.MeshBasicMaterial({ color: 0xa3e1ff, side: THREE.BackSide });
+     var skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
+     this.scene.add(skybox);*/
+  }
 
   handleResize() {
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
+  setControl() {
+    this.cameraControl = new THREE.OrbitControls(this.camera);
+  }
+
+  preRender() {
+    this.cameraControl.update();
+    this.scene.getObjectByName("ambient").color = new THREE.Color(0x111111);
   }
 }
