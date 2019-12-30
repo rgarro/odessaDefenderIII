@@ -78,6 +78,8 @@ class OD3 extends Game {
     };*/
   }
 
+  floorAndSky() {}
+
   handleResize() {
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
