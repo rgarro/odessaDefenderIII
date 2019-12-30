@@ -2,6 +2,7 @@ class OD3 extends Game {
   constructor() {
     super();
     this.container = "gameContainer";
+    this.floorTextureUrl = "/Assets/floorb.png";
   }
 
   init() {
@@ -59,6 +60,7 @@ class OD3 extends Game {
       light.shadow.camera.bottom   = -5;
     }*/
     this.scene.add(light);
+    console.log("luz camara accion ..");
 
     /*this.SkyBox = eO._3D.Factories.SkyBoxFactory(
       "images/dawnmountain-",
@@ -78,6 +80,7 @@ class OD3 extends Game {
 
   floorAndSky() {
     // FLOOR
+    console.log(this.floorTextureUrl);
     this.floorTexture = new THREE.TextureLoader().load(this.floorTextureUrl);
     this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
     this.floorTexture.repeat.set(10, 10);
