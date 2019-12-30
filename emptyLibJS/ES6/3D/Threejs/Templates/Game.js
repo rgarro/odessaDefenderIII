@@ -53,6 +53,9 @@ class Game {
     this.render();
   }
 
+  /**
+   * important spot
+   */
   render() {
     this.preRender();
     this.renderer.render(this.scene, this.camera);
