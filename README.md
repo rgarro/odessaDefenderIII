@@ -1,2 +1,2 @@
 # odessaDefenderIII
-The revolución eón be televised
+La revolución no se verá por television
