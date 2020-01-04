@@ -2,7 +2,10 @@ class OD3 extends Game {
   constructor() {
     super();
     this.container = "gameContainer";
-    this.floorTextureUrl = "assets/floorb.png";
+    this.floorTextureUrl = "/Game/assets/floorb.png";
+    this.ini_camera_x = 35;
+    this.ini_camera_y = 36;
+    this.ini_camera_z = 33;
   }
 
   init() {
@@ -60,8 +63,6 @@ class OD3 extends Game {
       light.shadow.camera.bottom   = -5;
     }*/
     this.scene.add(light);
-    console.log("luz camara accion ..");
-
     /*this.SkyBox = eO._3D.Factories.SkyBoxFactory(
       "images/dawnmountain-",
       ".png",
@@ -79,7 +80,6 @@ class OD3 extends Game {
   }
 
   floorAndSky() {
-    // FLOOR
     this.floorTexture = new THREE.TextureLoader().load(this.floorTextureUrl);
     this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
     this.floorTexture.repeat.set(10, 10);
@@ -87,22 +87,14 @@ class OD3 extends Game {
       map: this.floorTexture,
       side: THREE.DoubleSide
     });
-    var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
-    var floor = new THREE.Mesh(floorGeometry, floorMaterial);
-    floor.name = "floor";
-    floor.position.y = -0.5;
-    floor.rotation.x = Math.PI / 2;
-    if (this.enable_shadows) {
-      floor.receiveShadow = true;
-    }
-    console.log("al piso y boca abajo ...");
-    console.log(this.scene);
-    this.scene.add(floor);
-    //sky
-    /*  var skyboxGeometry = new THREE.BoxGeometry(10000, 10000, 10000);
-     var skyboxMaterial = new THREE.MeshBasicMaterial({ color: 0xa3e1ff, side: THREE.BackSide });
-     var skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
-     this.scene.add(skybox);*/
+    console.log(floorMaterial);
+    var geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+    var material = new THREE.MeshBasicMaterial({
+      color: 0xffff00,
+      side: THREE.DoubleSide
+    });
+    var plane = new THREE.Mesh(geometry, floorMaterial);
+    this.scene.add(plane);
   }
 
   handleResize() {
