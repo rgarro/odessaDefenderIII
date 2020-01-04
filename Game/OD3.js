@@ -2,7 +2,7 @@ class OD3 extends Game {
   constructor() {
     super();
     this.container = "gameContainer";
-    this.floorTextureUrl = "/Assets/floorb.png";
+    this.floorTextureUrl = "assets/floorb.png";
   }
 
   init() {
@@ -80,7 +80,6 @@ class OD3 extends Game {
 
   floorAndSky() {
     // FLOOR
-    console.log(this.floorTextureUrl);
     this.floorTexture = new THREE.TextureLoader().load(this.floorTextureUrl);
     this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
     this.floorTexture.repeat.set(10, 10);
@@ -96,6 +95,8 @@ class OD3 extends Game {
     if (this.enable_shadows) {
       floor.receiveShadow = true;
     }
+    console.log("al piso y boca abajo ...");
+    console.log(this.scene);
     this.scene.add(floor);
     //sky
     /*  var skyboxGeometry = new THREE.BoxGeometry(10000, 10000, 10000);
