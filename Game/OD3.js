@@ -6,6 +6,8 @@ class OD3 extends Game {
     this.ini_camera_x = 35;
     this.ini_camera_y = 36;
     this.ini_camera_z = 33;
+    this.clearColor = 0xa3e1ff;
+    this.enable_shadows = false;
   }
 
   init() {
@@ -93,8 +95,13 @@ class OD3 extends Game {
       color: 0xffff00,
       side: THREE.DoubleSide
     });
-    var plane = new THREE.Mesh(geometry, floorMaterial);
-    this.scene.add(plane);
+    var floor = new THREE.Mesh(geometry, floorMaterial);
+    floor.position.y = -0.5;
+    floor.rotation.x = Math.PI / 2;
+    if (this.enable_shadows) {
+      floor.receiveShadow = true;
+    }
+    this.scene.add(floor);
   }
 
   handleResize() {
