@@ -8,6 +8,7 @@ class OD3 extends Game {
     this.ini_camera_z = 33;
     this.clearColor = 0xa3e1ff;
     this.enable_shadows = false;
+    this.SU27 = null;
   }
 
   init() {
@@ -21,8 +22,7 @@ class OD3 extends Game {
     this.floorAndSky();
     this.loadTest();
     this.setLights();
-    //this.loadTank();
-    //this.loadCondor();
+    this.loadSU27();
     //this.loadTargets();
     //this.loadLabels();
     //this.loadInstructions();
@@ -35,6 +35,13 @@ class OD3 extends Game {
     var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     var cube = new THREE.Mesh(geometry, material);
     this.scene.add(cube);
+  }
+
+  loadSU27() {
+    this.SU27 = new SU27();
+    console.log("Я ем яблоню");
+    console.log(this.SU27);
+    this.SU27.loadFBXModel();
   }
 
   setLights() {
