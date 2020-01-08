@@ -2,7 +2,8 @@ class SU27 extends ControllableModel {
   constructor() {
     super();
     this.vehicleMeshName = "laChilindrinaDeApaikan";
-    this.modelUrl = "/Game/assets/models/SU25/SU-25.json"; //custom blended howitzer styled turret
+    this.modelUrl = "/Game/assets/models/SU25/SU-25.json";
+    this.FbxModelUrl = "/Game/assets/models/SU25/SU-25.fbx";
     this.pixelsPerSecond = 25;
     this.vehicleMesh = null;
     //this.scale = 13;

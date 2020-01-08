@@ -31,6 +31,11 @@ class OD3 extends Game {
     this.scene.add(axisHelper);
   }
 
+  playTheme() {
+    //var s = createjs.Sound.play('gameTheme',{loop:1000});
+    //s.volume = 0.3;
+  }
+
   loadTest() {
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -40,8 +45,7 @@ class OD3 extends Game {
 
   loadSU27() {
     this.SU27 = new SU27();
-    console.log("Я ем яблоню");
-    console.log(this.SU27);
+    this.SU27.setScene(this.scene);
     this.SU27.loadFBXModel();
   }
 
