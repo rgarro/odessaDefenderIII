@@ -9,6 +9,7 @@ class OD3 extends Game {
     this.clearColor = 0xa3e1ff;
     this.enable_shadows = false;
     this.SU27 = null;
+    //createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
   }
 
   init() {
