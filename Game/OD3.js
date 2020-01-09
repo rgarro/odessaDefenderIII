@@ -46,7 +46,8 @@ class OD3 extends Game {
   loadSU27() {
     this.SU27 = new SU27();
     this.SU27.setScene(this.scene);
-    this.SU27.loadFBXModel();
+    //this.SU27.loadFBXModel();
+    this.SU27.loadModel();
   }
 
   setLights() {

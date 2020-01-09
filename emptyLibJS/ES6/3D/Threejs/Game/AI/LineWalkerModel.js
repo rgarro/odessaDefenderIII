@@ -1,4 +1,4 @@
-class Mi28 {
+class LineWalkerModel {
   constructor() {
     this.modelUrl = "/emptyLibJS/3D/Games/Kalero/assets/mi28/Mi28.json";
     this.textureUrl = "/emptyLibJS/3D/Games/Kalero/assets/mi28/Mi28NA.png";
@@ -23,10 +23,5 @@ class Mi28 {
     this.ball_fell = false;
     this.balls = [];
     this.PropsRemover = null;
-    createjs.Sound.registerSound(
-      "/mp3/Helicopt-Diode111-8858_hifi.mp3",
-      "heliSound"
-    );
-    //createjs.Sound.registerSound("/Game/assets/sounds/Helicopt-Diode111-8858_hifi.mp3", 'heliSound');
   }
 }

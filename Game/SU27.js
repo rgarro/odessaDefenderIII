@@ -2,8 +2,9 @@ class SU27 extends ControllableModel {
   constructor() {
     super();
     this.vehicleMeshName = "laChilindrinaDeApaikan";
-    this.modelUrl = "/Game/assets/models/SU25/SU-25.json";
+    //this.modelUrl = "/Game/assets/models/SU25/SU-25.json";
     this.FbxModelUrl = "/Game/assets/models/SU25/SU-25.fbx";
+    this.modelUrl = "/Game/assets/models/Mi28.json";
     this.pixelsPerSecond = 25;
     this.vehicleMesh = null;
     //this.scale = 13;
