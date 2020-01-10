@@ -1,5 +1,6 @@
-class Mi28 {
+class Mi28 extends LineWalkerModel {
   constructor() {
+    super();
     this.modelUrl = "/emptyLibJS/3D/Games/Kalero/assets/mi28/Mi28.json";
     this.textureUrl = "/emptyLibJS/3D/Games/Kalero/assets/mi28/Mi28NA.png";
     this.game = null;
