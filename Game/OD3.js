@@ -2,13 +2,14 @@ class OD3 extends Game {
   constructor() {
     super();
     this.container = "gameContainer";
-    this.floorTextureUrl = "/Game/assets/floorb.png";
+    this.floorTextureUrl = "./Game/assets/floorb.png";
     this.ini_camera_x = 35;
     this.ini_camera_y = 36;
     this.ini_camera_z = 33;
     this.clearColor = 0xa3e1ff;
     this.enable_shadows = false;
     this.SU27 = null;
+    this.showAxis = false;
     //createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
   }
 
@@ -21,12 +22,18 @@ class OD3 extends Game {
     this.camera.position.set(0, 150, 400);
     this.camera.lookAt(this.scene.position);
     this.floorAndSky();
-    this.loadTest();
+    //this.loadTest();
     this.setLights();
     this.loadSU27();
     //this.loadTargets();
     //this.loadLabels();
     //this.loadInstructions();
+    if (this.showAxis) {
+      this.displayAxis();
+    }
+  }
+
+  displayAxis() {
     var axisHelper = new THREE.AxisHelper(5);
     this.scene.add(axisHelper);
   }
@@ -102,13 +109,13 @@ class OD3 extends Game {
       map: this.floorTexture,
       side: THREE.DoubleSide
     });
-    console.log(floorMaterial);
+
     var geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
     var material = new THREE.MeshBasicMaterial({
-      color: 0xffff00,
+      color: 0x8fc965,
       side: THREE.DoubleSide
     });
-    var floor = new THREE.Mesh(geometry, floorMaterial);
+    var floor = new THREE.Mesh(geometry, material);
     floor.position.y = -0.5;
     floor.rotation.x = Math.PI / 2;
     if (this.enable_shadows) {
