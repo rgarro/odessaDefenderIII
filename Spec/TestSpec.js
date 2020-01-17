@@ -1,7 +1,5 @@
-describe(“asertt is ver against 
-
-it(“should be tratable”,function(){
-
-});
-
+describe("Test Spec", function() {
+  it("should be testable", function() {
+    expect(true).toBeTrue();
+  });
 });
