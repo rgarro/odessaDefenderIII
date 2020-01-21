@@ -3,13 +3,13 @@ class OD3 extends Game {
     super();
     this.container = "gameContainer";
     this.floorTextureUrl = "./Game/assets/floorb.png";
-    this.ini_camera_x = 35;
-    this.ini_camera_y = 36;
-    this.ini_camera_z = 33;
+    this.ini_camera_x = 0;
+    this.ini_camera_y = 150;
+    this.ini_camera_z = 400;
     this.clearColor = 0xa3e1ff;
     this.enable_shadows = false;
     this.SU27 = null;
-    this.showAxis = false;
+    this.showAxis = true;
     //createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
   }
 
@@ -19,7 +19,11 @@ class OD3 extends Game {
 
   postInit() {
     var p = this;
-    this.camera.position.set(0, 150, 400);
+    this.camera.position.set(
+      this.ini_camera_x,
+      this.ini_camera_y,
+      this.ini_camera_z
+    );
     this.camera.lookAt(this.scene.position);
     this.floorAndSky();
     //this.loadTest();
