@@ -28,7 +28,8 @@ class OD3 extends Game {
     this.floorAndSky();
     //this.loadTest();
     this.setLights();
-    this.loadSU27();
+    //this.loadSU27();
+    this.loadMi28();
     //this.loadTargets();
     //this.loadLabels();
     //this.loadInstructions();
@@ -59,6 +60,13 @@ class OD3 extends Game {
     this.SU27.setScene(this.scene);
     //this.SU27.loadFBXModel();
     this.SU27.loadModel();
+  }
+
+  loadMi28() {
+    this.Mi28 = new SU27();
+    this.Mi28.setScene(this.scene);
+    //this.SU27.loadFBXModel();
+    this.Mi28.loadModel();
   }
 
   setLights() {
