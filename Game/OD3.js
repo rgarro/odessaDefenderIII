@@ -63,10 +63,14 @@ class OD3 extends Game {
   }
 
   loadMi28() {
-    this.Mi28 = new SU27();
+    this.Mi28 = new Mi28();
     this.Mi28.setScene(this.scene);
     //this.SU27.loadFBXModel();
+    this.Mi28.setGame(this);
     this.Mi28.loadModel();
+    //this.bgHelicopter.init();
+    //this.bgHelicopter.mesh.y = 500;
+    this.heliFlying = true;
   }
 
   setLights() {
