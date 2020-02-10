@@ -28,7 +28,7 @@ class OD3 extends Game {
     this.floorAndSky();
     //this.loadTest();
     this.setLights();
-    
+
     this.loadMi28();
     //this.loadTargets();
     //this.loadLabels();
@@ -55,11 +55,10 @@ class OD3 extends Game {
     this.scene.add(cube);
   }
 
-
   loadMi28() {
     this.Mi28 = new Mi28();
     this.Mi28.setScene(this.scene);
-    
+
     this.Mi28.setGame(this);
     this.Mi28.loadModel();
     //this.bgHelicopter.init();
