@@ -44,7 +44,7 @@ class Mi28 extends ControllableModel {
 
   postLoaded() {
     this.mesh.rotation.y = this.init_rotation;
-    this.mesh.position.y = this.altitude;
+    this.mesh.position.y = this.altitude + 10;
     this.mesh.position.x = this.ini_x;
     this.mesh.position.z = this.ini_z;
 
