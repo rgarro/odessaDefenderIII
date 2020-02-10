@@ -2,7 +2,7 @@ class OD3 extends Game {
   constructor() {
     super();
     this.container = "gameContainer";
-    this.floorTextureUrl = "./Game/assets/floorb.png";
+    this.floorTextureUrl = "/Game/assets/floorb.png";
     this.ini_camera_x = 0;
     this.ini_camera_y = 150;
     this.ini_camera_z = 400;
@@ -111,6 +111,7 @@ class OD3 extends Game {
   }
 
   floorAndSky() {
+console.log(this.floorTextureUrl);
     this.floorTexture = new THREE.TextureLoader().load(this.floorTextureUrl);
     this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
     this.floorTexture.repeat.set(10, 10);
@@ -124,7 +125,7 @@ class OD3 extends Game {
       color: 0x8fc965,
       side: THREE.DoubleSide
     });
-    var floor = new THREE.Mesh(geometry, material);
+    var floor = new THREE.Mesh(geometry, floorMaterial);
     floor.position.y = -0.5;
     floor.rotation.x = Math.PI / 2;
     if (this.enable_shadows) {
