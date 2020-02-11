@@ -3,7 +3,7 @@ class Mi28 extends ControllableModel {
     super();
     this.vehicleMeshName = "boinaAzulDeChinandega";
     this.modelUrl = "/Game/assets/models/Mi28.json";
-    this.textureUrl = "/Game/assets/models/Mi28NA.png";
+    this.textureUrl = "/Game/assets/models/Mi28ND.png";
     this.ObjModelUrl = "/Game/assets/models/SU25/SU-25.obj";
     this.pixelsPerSecond = 25;
     this.vehicleMesh = null;
@@ -36,6 +36,7 @@ class Mi28 extends ControllableModel {
     this.ball_fell = false;
     this.balls = [];
     this.PropsRemover = null;
+    this.is_textured_material = true;
     createjs.Sound.registerSound(
       "/Game/assets/sounds/Helicopt-Diode111-8858_hifi.mp3",
       "heliSound"
