@@ -8,13 +8,17 @@ class OD3 extends Game {
     this.ini_camera_z = 400;
     this.clearColor = 0xa3e1ff;
     this.enable_shadows = false;
-    this.SU27 = null;
+    this.Mi28 = null;
     this.showAxis = true;
     //createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
   }
 
   init() {
     super.init();
+  }
+
+  startBtn(){
+    console.log("planet express spaceship is a webGl camera ..");
   }
 
   postInit() {
@@ -111,7 +115,6 @@ class OD3 extends Game {
   }
 
   floorAndSky() {
-console.log(this.floorTextureUrl);
     this.floorTexture = new THREE.TextureLoader().load(this.floorTextureUrl);
     this.floorTexture.wrapS = this.floorTexture.wrapT = THREE.RepeatWrapping;
     this.floorTexture.repeat.set(10, 10);
@@ -147,5 +150,8 @@ console.log(this.floorTextureUrl);
   preRender() {
     this.cameraControl.update();
     this.scene.getObjectByName("ambient").color = new THREE.Color(0x111111);
+    if(this.game_is_started){
+      this.Mi28.onRender();
+    }
   }
 }

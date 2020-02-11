@@ -11,11 +11,7 @@
     <script src="Lib/FBXLoader.js"></script>
     <script src="Lib/FirstPersonControls.js"></script>
 
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+    <script src="Lib/jquery-1.11.3.min.js"></script>
 
     <script src="emptyLibJS/ES6/3D/Threejs/Templates/Game.js"></script>
     <script src="emptyLibJS/ES6/3D/Threejs/Game/Factories/ModelSpawnerFactory.js"></script>
@@ -34,12 +30,24 @@
         margin: 0;
       }
       canvas {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
+      }
+      #gameInfo {
+        position: absolute;
+        top: 80px;
+        left: 30px;
+        width: 300;
+        text-align: center;
+        z-index: 100;
+        display: block;
       }
     </style>
   </head>
   <body>
+    <div id="gameInfo">
+      <button id="startBtn">Начало / Sta</button>
+    </div>
     <div id="gameContainer"></div>
     <script>
       $(document).ready(function() {
@@ -52,6 +60,11 @@
         }
         app.handleResize();
         window.addEventListener("resize", handleResize, false);
+
+        $("#startBtn").on("click",function() {
+          app.startBtn();
+        });
+
       });
     </script>
   </body>
