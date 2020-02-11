@@ -11,7 +11,7 @@ class Mi28 extends ControllableModel {
     this.altitude = 145;
     this.ini_x = 0;
     //this.ini_y = 150;
-    this.ini_z = 350;
+    this.ini_z = 0;
     this.init_rotation = 160;
     this.modelColor = 0x0d9a927;
     this.vehicleColor = 0x0ffa65;
@@ -43,14 +43,18 @@ class Mi28 extends ControllableModel {
     );
   }
 
+  playHeliSound(){
+    var s = createjs.Sound.play("heliSound", { loop: 1000 });
+    s.volume = 0.3;
+  }
+
   postLoaded() {
+    this.mesh.scale.set(this.scale, this.scale, this.scale);
     this.mesh.rotation.y = this.init_rotation;
-    this.mesh.position.y = this.altitude + 10;
+    this.mesh.position.y = this.altitude;
     this.mesh.position.x = this.ini_x;
     this.mesh.position.z = this.ini_z;
 
-    var s = createjs.Sound.play("heliSound", { loop: 1000 });
-    s.volume = 0.3;
     this.mesh.rotation.y = -90;
     this.initPropeller();
     //this.initRudder();
