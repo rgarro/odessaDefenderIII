@@ -41,16 +41,19 @@
         text-align: center;
         z-index: 100;
         display: block;
+        background-color: #71f7e0;
+        padding: 10px;
       }
     </style>
   </head>
   <body>
     <div id="gameInfo">
-      <button id="startBtn">Начало / Sta</button>
+      <button id="startBtn">hачало/start</button>
     </div>
     <div id="gameContainer"></div>
     <script>
       $(document).ready(function() {
+        var is_started = false;
         var app = new OD3();
         //app.setContainer('app');
         app.init();
@@ -62,8 +65,15 @@
         window.addEventListener("resize", handleResize, false);
 
         $("#startBtn").on("click",function() {
-          app.startBtn();
-        });
+          if(!is_started){
+            $("#startBtn").html("стоп/stop");
+            is_started = true;
+          }else{
+            $("#startBtn").html("hачало/start");
+            is_started = false;
+          }
+          app.startBtn(is_started);
+        }.bind(this));
 
       });
     </script>
