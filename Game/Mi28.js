@@ -1,3 +1,27 @@
+/**
+ * '-----------------------------------------------------------------'
+ *                            ||                    Reaper X
+ *                        _____YY_____
+ *                      .'@@@@@@@@@@@@'.
+ *                     ///     ||     \\\
+ *                    ///      ||      \\\
+ *                    ||  ___  ||  _O_  ||
+ *          .-_-.     || |   | || || ||     .-_-.
+ *        .'d(x)b'.   |A'._Y_|_||_|_Y_.'A|   .'d(x)b'.
+ *        |(x)O(x)|---|@@@@@@@@@@@@@@@@@@|---|(x)O(x)|
+ *        |(x)O(x)|===|@@@@@@@@xxx@@@@@@@|===|(x)O(x)|
+ *        '.g(x)P.'   '|g@@@@@xx%xx@@@@p|'   '.g(x)P.'
+ *          '---'       '.g@@@@xxx@@@@p'       '---'
+ *                     ==='.g@@@@@@@p.'===
+ *                    //     \X_o_X/     \\
+ *                   (_)                 (_)
+ *
+ * Alles klar, Herr Kommissar?
+ * She said, "Babe, you know I miss Jill and Joe
+ * And all my funky friends"
+ * 
+ * @author Rolando <rgarro@gmail.com>                   
+ */
 class Mi28 extends ControllableModel {
   constructor() {
     super();
@@ -62,21 +86,30 @@ class Mi28 extends ControllableModel {
 
     this.mesh.rotation.y = -90;
     this.initPropeller();
-    //this.initRudder();
+    this.initRudder();
     if (this.game.enable_shadows) {
       this.mesh.castShadow = true;
     }
     this.group.add(this.mesh);
     this.group.add(this.propeller.mesh);
-    //this.group.add(this.rudder.mesh);
+    this.group.add(this.rudder.mesh);
     this.game.scene.add(this.group);
     //this.PropsRemover = new eO.Util.PropsRemover(this.game.scene);
     //this.initListeners();
     this.initialGroupPosition();
   }
 
+  initRudder(){
+    this.rudder = new HeliRudder();
+    this.rudder.origin.y = this.altitude + 10;
+    this.rudder.origin.x = 50;
+    this.rudder.origin.z = 28;
+    this.rudder.setGame(this.game);
+    this.rudder.loadModel("/cube/");
+  }
+
   initialGroupPosition(){
-console.log("Fry is a rappist solid carbon dioxide bender webGl Bessie cameraControl ...");
+//console.log("Fry is a rappist solid carbon dioxide bender webGl Bessie cameraControl ...");
     this.group.position.z = 245;
     this.group.position.x = 0;
     this.group.position.y = 0;
@@ -96,6 +129,6 @@ console.log("Fry is a rappist solid carbon dioxide bender webGl Bessie cameraCon
     this.propeller.mesh.position.x = this.mesh.position.x;
     */
     this.propeller.onRender();
-    //this.rudder.onRender(this.mesh.position.x + 50,this.mesh.position.y,this.mesh.position.z + 28);
+    this.rudder.onRender(this.mesh.position.x + 50,this.mesh.position.y,this.mesh.position.z + 28);
   }
 }
