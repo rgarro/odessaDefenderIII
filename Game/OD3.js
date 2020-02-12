@@ -11,6 +11,8 @@ class OD3 extends Game {
     this.Mi28 = null;
     this.showAxis = true;
     createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
+    this.themeSound = null;
+    this.themeSoundVolume = 0.5;
   }
 
   init() {
@@ -20,9 +22,12 @@ class OD3 extends Game {
   startBtn(startFlag){
     this.game_is_started = startFlag;
     if(this.game_is_started){
-      console.log("planet express spaceship is a webGl camera ..");
+      //console.log("planet express spaceship is a webGl camera ..");
       this.playTheme();
       this.Mi28.playHeliSound();
+    }else{
+      this.pauseTheme();
+      this.Mi28.stopHeliSound();
     }
   }
 
@@ -53,8 +58,12 @@ class OD3 extends Game {
   }
 
   playTheme() {
-    var s = createjs.Sound.play('gameTheme',{loop:1000});
-    s.volume = 0.3;
+    this.themeSound = createjs.Sound.play('gameTheme',{loop:1000});
+    this.themeSound.volume = this.themeSoundVolume;
+  }
+
+  pauseTheme(){
+    this.themeSound.stop();
   }
 
   loadTest() {

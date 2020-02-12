@@ -1,6 +1,6 @@
 # odessaDefenderIII
 
-Domo Arigato Mr Roboto ....
+Fry is a rappist solid carbon dioxide bender webGl Bessie cameraControl ....
 
 [![que no se resistieran, por que sino los mataban ... ](https://raw.githubusercontent.com/rgarro/odessaDefenderIII/master/dots.PNG)]
 

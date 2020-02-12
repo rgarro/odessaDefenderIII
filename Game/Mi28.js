@@ -8,7 +8,7 @@ class Mi28 extends ControllableModel {
     this.pixelsPerSecond = 25;
     this.vehicleMesh = null;
     //this.scale = 13;
-    this.altitude = 145;
+    this.altitude = 125;
     this.ini_x = 0;
     //this.ini_y = 150;
     this.ini_z = 0;
@@ -16,7 +16,6 @@ class Mi28 extends ControllableModel {
     this.modelColor = 0x0d9a927;
     this.vehicleColor = 0x0ffa65;
     this.rotationAngleStep = 6;
-    this.group = new THREE.Object3D();
 
     this.geometry = null;
     this.mesh = null;
@@ -41,11 +40,17 @@ class Mi28 extends ControllableModel {
       "/Game/assets/sounds/Helicopt-Diode111-8858_hifi.mp3",
       "heliSound"
     );
+    this.heliSound = null;
+    this.heliSoundVolume = 0.1;
   }
 
   playHeliSound(){
-    var s = createjs.Sound.play("heliSound", { loop: 1000 });
-    s.volume = 0.3;
+    this.heliSound = createjs.Sound.play("heliSound", { loop: 1000 });
+    this.heliSound.volume = this.heliSoundVolume;
+  }
+
+  stopHeliSound(){
+    this.heliSound.stop();
   }
 
   postLoaded() {
@@ -67,23 +72,29 @@ class Mi28 extends ControllableModel {
     this.game.scene.add(this.group);
     //this.PropsRemover = new eO.Util.PropsRemover(this.game.scene);
     //this.initListeners();
+    this.initialGroupPosition();
+  }
+
+  initialGroupPosition(){
+console.log("Fry is a rappist solid carbon dioxide bender webGl Bessie cameraControl ...");
+    this.group.position.z = 245;
+    this.group.position.x = 0;
+    this.group.position.y = 0;
   }
 
   initPropeller() {
     this.propeller = new HeliPropeller();
-    this.propeller.origin.y = this.altitude + 10;
+    this.propeller.origin.y = this.altitude + 8;
     this.propeller.setGame(this.game);
     this.propeller.loadModel("/cube/");
   }
 
   postRender() {
     //this.ballsLoop();
-    this.propeller.mesh.position.x = this.mesh.position.x;
+    /*this.propeller.mesh.position.x = this.mesh.position.x;
     this.propeller.mesh.position.z = this.mesh.position.z;
     this.propeller.mesh.position.x = this.mesh.position.x;
-    this.group.position.z = this.mesh.position.z;
-    this.group.position.x = this.mesh.position.x;
-    this.group.position.y = this.mesh.position.y;
+    */
     this.propeller.onRender();
     //this.rudder.onRender(this.mesh.position.x + 50,this.mesh.position.y,this.mesh.position.z + 28);
   }

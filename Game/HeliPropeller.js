@@ -15,11 +15,11 @@ class HeliPropeller extends SelfCenteredHorizontalRotator {
     this.clockWise = true;
     this.modelLoaded = false;
     this.scale = 2;
-    this.color = 0x000000;
+    this.color = 0x3c4557;
   }
 
   loadModel(modelUrl) {
-    console.log(modelUrl);
+    //console.log(modelUrl);
     //var material = new THREE.MeshPhongMaterial();
     var material = new THREE.MeshBasicMaterial({ color: this.color });
     //material.color.set(this.color);
