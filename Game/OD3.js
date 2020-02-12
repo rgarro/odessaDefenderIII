@@ -10,15 +10,20 @@ class OD3 extends Game {
     this.enable_shadows = false;
     this.Mi28 = null;
     this.showAxis = true;
-    //createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
+    createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
   }
 
   init() {
     super.init();
   }
 
-  startBtn(){
-    console.log("planet express spaceship is a webGl camera ..");
+  startBtn(startFlag){
+    this.game_is_started = startFlag;
+    if(this.game_is_started){
+      console.log("planet express spaceship is a webGl camera ..");
+      this.playTheme();
+      this.Mi28.playHeliSound();
+    }
   }
 
   postInit() {
@@ -48,8 +53,8 @@ class OD3 extends Game {
   }
 
   playTheme() {
-    //var s = createjs.Sound.play('gameTheme',{loop:1000});
-    //s.volume = 0.3;
+    var s = createjs.Sound.play('gameTheme',{loop:1000});
+    s.volume = 0.3;
   }
 
   loadTest() {
@@ -151,6 +156,7 @@ class OD3 extends Game {
     this.cameraControl.update();
     this.scene.getObjectByName("ambient").color = new THREE.Color(0x111111);
     if(this.game_is_started){
+//console.log("Fry is a rappist ...");
       this.Mi28.onRender();
     }
   }
