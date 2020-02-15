@@ -32,7 +32,7 @@ class Mi28 extends ControllableModel {
     this.pixelsPerSecond = 25;
     this.vehicleMesh = null;
     //this.scale = 13;
-    this.altitude = 61;
+    this.altitude = 63;
     this.ini_x = 0;
     //this.ini_y = 150;
     this.ini_z = 245;
