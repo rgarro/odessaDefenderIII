@@ -16,6 +16,7 @@
     <script src="emptyLibJS/ES6/3D/Threejs/Templates/Game.js"></script>
     <script src="emptyLibJS/ES6/3D/Threejs/Game/Factories/ModelSpawnerFactory.js"></script>
     <script src="emptyLibJS/ES6/3D/Threejs/Game/Controllable/ControllableModel.js"></script>
+    <script src="emptyLibJS/ES6/3D/Threejs/Game/Controlls/HelicopterController.js"></script>
     <script src="emptyLibJS/ES6/3D/Threejs/Game/AI/LineWalkerModel.js"></script>
     <script src="emptyLibJS/ES6/3D/Threejs/Game/AI/SelfCenteredHorizontalRotator.js"></script>
     <script src="emptyLibJS/ES6/3D/Threejs/Game/AI/SelfCenteredVerticalRotator.js"></script>
@@ -55,28 +56,31 @@
     <div id="gameContainer"></div>
     <script>
       $(document).ready(function() {
-        var is_started = false;
-        var app = new OD3();
-        //app.setContainer('app');
-        app.init();
+        try {
+          var is_started = false;
+          var app = new OD3();
+          //app.setContainer('app');
+          app.init();
 
-        function handleResize() {
-          app.handleResize();
-        }
-        app.handleResize();
-        window.addEventListener("resize", handleResize, false);
-
-        $("#startBtn").on("click",function() {
-          if(!is_started){
-            $("#startBtn").html("стоп/stop");
-            is_started = true;
-          }else{
-            $("#startBtn").html("hачало/start");
-            is_started = false;
+          function handleResize() {
+            app.handleResize();
           }
-          app.startBtn(is_started);
-        }.bind(this));
+          app.handleResize();
+          window.addEventListener("resize", handleResize, false);
 
+          $("#startBtn").on("click",function() {
+            if(!is_started){
+              $("#startBtn").html("стоп/stop");
+              is_started = true;
+            }else{
+              $("#startBtn").html("hачало/start");
+              is_started = false;
+            }
+            app.startBtn(is_started);
+          }.bind(this));
+        } catch(err){
+          console.log(err);
+        }
       });
     </script>
   </body>

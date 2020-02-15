@@ -22,12 +22,13 @@ class OD3 extends Game {
   startBtn(startFlag){
     this.game_is_started = startFlag;
     if(this.game_is_started){
-      //console.log("planet express spaceship is a webGl camera ..");
       this.playTheme();
       this.Mi28.playHeliSound();
+      this.Mi28.controll.enableControl();
     }else{
       this.pauseTheme();
       this.Mi28.stopHeliSound();
+      this.Mi28.controll.disableControl();
     }
   }
 

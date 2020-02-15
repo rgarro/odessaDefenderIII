@@ -10,7 +10,7 @@ class HeliPropeller extends SelfCenteredHorizontalRotator {
     this.meshName = "helice";
     this.centerMeshName = ""; //this. will follow while turning
     this.altitude = 50; //y
-    this.origin = { x: 0, y: 50, z: 0 };
+    this.origin = { x: 0, y: 0, z: 0 };
     this.speed = 0.9;
     this.clockWise = true;
     this.modelLoaded = false;

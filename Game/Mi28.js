@@ -55,7 +55,7 @@ class Mi28 extends ControllableModel {
     this.propeller = null;
     this.rudder = null;
     this.dropKey = "y"; //testing Wo FallingBouncer
-    this.group = new THREE.Object3D();
+    //this.group = new THREE.Object3D();
     this.ball_fell = false;
     this.balls = [];
     this.PropsRemover = null;
@@ -79,10 +79,6 @@ class Mi28 extends ControllableModel {
 
   postLoaded() {
     this.mesh.scale.set(this.scale, this.scale, this.scale);
-    //this.mesh.rotation.y = this.init_rotation;
-    //this.mesh.position.y = this.altitude;
-    //this.mesh.position.x = this.ini_x;
-    //this.mesh.position.z = this.ini_z;
 
     this.mesh.rotation.y = 355;
     this.group.add(this.mesh);
@@ -93,8 +89,9 @@ class Mi28 extends ControllableModel {
       this.mesh.castShadow = true;
     }
     this.game.scene.add(this.group);
-    //this.PropsRemover = new eO.Util.PropsRemover(this.game.scene);
-    //this.initListeners();
+    this.setHelicopterControll();
+    this.controll.setGroup(this.group);
+    this.controll.initListeners();
   }
 
   initRudder(){
