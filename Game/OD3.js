@@ -158,7 +158,6 @@ class OD3 extends Game {
   }
 
   setControl() {
-<<<<<<< HEAD
     //this.cameraControl = new THREE.OrbitControls(this.camera);
   }
 
@@ -166,16 +165,6 @@ class OD3 extends Game {
     //this.cameraControl.update();
     this.scene.getObjectByName("ambient").color = new THREE.Color(0x111111);
     if(this.game_is_started){
-=======
-    this.cameraControl = new THREE.OrbitControls(this.camera);
-  }
-
-  preRender() {
-    this.cameraControl.update();
-    this.scene.getObjectByName("ambient").color = new THREE.Color(0x111111);
-    if(this.game_is_started){
-//console.log("Fry is a rappist ...");
->>>>>>> 88556cea2e16d275593d795f03f5b8a53684b983
       this.Mi28.onRender();
     }
   }
