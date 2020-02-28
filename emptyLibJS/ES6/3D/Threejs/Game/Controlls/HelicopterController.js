@@ -5,6 +5,8 @@ class HelicopterController {
     this.group_is_set = false;
   }
 
+
+
   setGroup(group3d){
     if(group3d.type == "Object3D"){
       this.group = group3d;
@@ -13,6 +15,10 @@ class HelicopterController {
       throw "HelicopterController needs a Object3D as group";
     }
   }
+
+moveForward(){}
+
+moveBackward(){}
 
   enableControl(){
     this.is_controllable = true;
