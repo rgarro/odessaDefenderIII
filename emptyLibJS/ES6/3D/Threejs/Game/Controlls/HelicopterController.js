@@ -20,6 +20,8 @@ moveForward(){}
 
 moveBackward(){}
 
+moveLeft(){}
+
   enableControl(){
     this.is_controllable = true;
   }
