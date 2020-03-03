@@ -22,6 +22,8 @@ moveBackward(){}
 
 moveLeft(){}
 
+moveRight(){}
+
   enableControl(){
     this.is_controllable = true;
   }
