@@ -26,6 +26,8 @@ moveRight(){}
 
 moveUp(){}
 
+moveDown(){}
+
 
   enableControl(){
     this.is_controllable = true;
