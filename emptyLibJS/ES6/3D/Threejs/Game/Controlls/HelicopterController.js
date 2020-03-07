@@ -28,6 +28,8 @@ moveUp(){}
 
 moveDown(){}
 
+rotateLeft(){}
+
 
   enableControl(){
     this.is_controllable = true;
