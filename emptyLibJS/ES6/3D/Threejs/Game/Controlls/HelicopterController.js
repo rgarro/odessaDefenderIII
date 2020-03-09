@@ -30,6 +30,8 @@ moveDown(){}
 
 rotateLeft(){}
 
+rotateRight(){}
+
 
   enableControl(){
     this.is_controllable = true;
