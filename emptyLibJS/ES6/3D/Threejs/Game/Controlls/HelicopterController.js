@@ -32,6 +32,8 @@ rotateLeft(){}
 
 rotateRight(){}
 
+pitchDown(){}
+
 
   enableControl(){
     this.is_controllable = true;
