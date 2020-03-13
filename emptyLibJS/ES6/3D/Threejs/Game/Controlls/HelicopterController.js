@@ -26,13 +26,15 @@ moveRight(){}
 
 moveUp(){}
 
-moveDown(){}
+moveDown(){}//throttle down
 
 rotateLeft(){}
 
 rotateRight(){}
 
-pitchDown(){}
+pitchFront(){}
+
+pitchBack(){}
 
 
   enableControl(){
