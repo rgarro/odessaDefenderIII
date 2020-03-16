@@ -24,9 +24,11 @@ moveLeft(){}
 
 moveRight(){}
 
-moveUp(){}
-
-moveDown(){}//throttle down
+//moveUp(){}
+throttleUp(){}
+  
+//moveDown(){}
+throttleDown(){}
 
 rotateLeft(){}
 
