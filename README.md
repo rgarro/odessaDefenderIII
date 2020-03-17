@@ -1,6 +1,6 @@
 # odessaDefenderIII
 
-Fry is a rappist solid carbon dioxide bender webGl Bessie cameraControl ....
+
 
 https://odessa-defender3.firebaseapp.com/
 
