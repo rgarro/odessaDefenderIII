@@ -3,6 +3,9 @@ class HelicopterController {
     this.group = null;
     this.is_controllable = false;
     this.group_is_set = false;
+    this.throttle_steps = 10;
+    this.max_throttle = 50;
+    this.camera = null;
   }
 
 
