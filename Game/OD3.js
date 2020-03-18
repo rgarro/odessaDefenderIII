@@ -1,14 +1,18 @@
+/**
+ *
+ *
+ */
 class OD3 extends Game {
   constructor() {
     super();
     this.container = "gameContainer";
     this.floorTextureUrl = "/Game/assets/floorb.png";
     this.ini_camera_x = 0;
-    this.ini_camera_y = 150;
+    this.ini_camera_y = 95;
     this.ini_camera_z = 400;
     this.clearColor = 0xa3e1ff;
     this.enable_shadows = false;
-    this.Mi28 = null;
+    this.Mi28 = null;//
     this.showAxis = true;
     createjs.Sound.registerSound("/Game/assets/sounds/FalklandsAreBritish.mp3", 'gameTheme');
     this.themeSound = null;
@@ -80,6 +84,7 @@ class OD3 extends Game {
 
     this.Mi28.setGame(this);
     this.Mi28.loadModel();
+    this.Mi28.setHelicopterControll();
     //this.bgHelicopter.init();
     //this.bgHelicopter.mesh.y = 500;
     this.heliFlying = true;

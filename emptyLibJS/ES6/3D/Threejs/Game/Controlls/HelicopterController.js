@@ -1,5 +1,6 @@
 class HelicopterController {
   constructor(){
+console.log("helicopter controller started");
     this.group = null;
     this.is_controllable = false;
     this.group_is_set = false;
@@ -7,8 +8,6 @@ class HelicopterController {
     this.max_throttle = 50;
     this.camera = null;
   }
-
-
 
   setGroup(group3d){
     if(group3d.type == "Object3D"){
@@ -19,39 +18,41 @@ class HelicopterController {
     }
   }
 
-moveForward(){}
+  moveForward(){}
 
-moveBackward(){}
+  moveBackward(){}
 
-moveLeft(){}
+  moveLeft(){}
 
-moveRight(){}
+  moveRight(){}
 
-//moveUp(){}
-throttleUp(){}
-  
-//moveDown(){}
-throttleDown(){}
+  //moveUp(){}
+  throttleUp(){}
 
-rotateLeft(){}
+  //moveDown(){}
+  throttleDown(){}
 
-rotateRight(){}
+  rotateLeft(){}
 
-pitchFront(){}
+  rotateRight(){}
 
-pitchBack(){}
+  pitchFront(){}
+
+  pitchBack(){}
 
 
   enableControl(){
     this.is_controllable = true;
+console.log(this.is_controllable);
   }
 
   disableControl(){
     this.is_controllable = false;
+console.log(this.is_controllable);    
   }
 
   initListeners(){
-console.log("the fatal sound of broken dreams ...");    
+console.log("the fatal sound of broken dreams ...");
   }
 
 }

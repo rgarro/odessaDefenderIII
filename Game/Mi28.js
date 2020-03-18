@@ -66,6 +66,7 @@ class Mi28 extends ControllableModel {
     );
     this.heliSound = null;
     this.heliSoundVolume = 0.1;
+    this.controll_is_set = false;
   }
 
   playHeliSound(){
