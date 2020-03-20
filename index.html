@@ -52,6 +52,8 @@
   <body>
     <div id="gameInfo">
       <button id="startBtn">hачало/start</button>
+      <button id="frontViewBtn">front view</button>
+      <button id="backViewBtn">back view</button>
     </div>
     <div id="gameContainer"></div>
     <script>
@@ -67,6 +69,14 @@
           }
           app.handleResize();
           window.addEventListener("resize", handleResize, false);
+
+          $("#backViewBtn").on("click",function() {
+            app.setBackView();
+          }.bind(this));
+
+          $("#frontViewBtn").on("click",function() {
+            app.setFrontView();
+          }.bind(this));
 
           $("#startBtn").on("click",function() {
             if(!is_started){

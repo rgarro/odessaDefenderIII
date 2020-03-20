@@ -1,7 +1,7 @@
 {
   "name": "odessadefenderiii",
   "version": "1.0.0",
-  "description": "",
+  "description": "caution wet floor IV ......",
   "main": "index.html",
   "scripts": {
     "start": "serve"
@@ -19,5 +19,6 @@
   "homepage": "https://github.com/codesandbox-app/static-template#readme",
   "devDependencies": {
     "serve": "^11.2.0"
-  }
+  },
+  "dependencies": {}
 }

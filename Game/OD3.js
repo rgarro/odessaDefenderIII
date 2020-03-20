@@ -167,6 +167,14 @@ class OD3 extends Game {
     //this.cameraControl = new THREE.OrbitControls(this.camera);
   }
 
+  setFrontView(){
+    console.log("set front view");
+  }
+
+  setBackView(){
+    console.log("set back view");
+  }
+
   preRender() {
     //this.cameraControl.update();
     this.scene.getObjectByName("ambient").color = new THREE.Color(0x111111);
