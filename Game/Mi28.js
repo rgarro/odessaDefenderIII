@@ -67,6 +67,8 @@ class Mi28 extends ControllableModel {
     this.heliSound = null;
     this.heliSoundVolume = 0.1;
     this.controll_is_set = false;
+
+    this.camera_distance_from_helicopter = 200;
   }
 
   playHeliSound(){
