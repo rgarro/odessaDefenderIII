@@ -16,10 +16,6 @@
  *                    //     \X_o_X/     \\
  *                   (_)                 (_)
  *
- * Alles klar, Herr Kommissar?
- * She said, "Babe, you know I miss Jill and Joe
- * And all my funky friends"
- *
  * @author Rolando <rgarro@gmail.com>
  */
 class Mi28 extends ControllableModel {
@@ -69,6 +65,43 @@ class Mi28 extends ControllableModel {
     this.controll_is_set = false;
 
     this.camera_distance_from_helicopter = 200;
+    this.camera_is_set = false;
+    this.camera = null;
+  }
+
+  setCamera(sceneCamera){
+    this.camera = sceneCamera;
+    this.camera_is_set = true;
+  }
+
+  calculateCameraDistance(side="back"){
+    switch (side) {
+      case 'back':
+        //calculateCameraDistance(side)
+        console.log("distance Camera: " + side);
+        break;
+      case 'front':
+        //calculateCameraDistance(side)
+        console.log("distance Camera: " + side);
+        break;
+      default:
+          throw "Cant calculate side distance for " + side;
+    }
+  }
+
+  setCameraPosition(side="back"){
+    switch (side) {
+      case 'back':
+        this.calculateCameraDistance(side)
+        console.log("Position Camera: " + side);
+        break;
+      case 'front':
+        this.calculateCameraDistance(side)
+        console.log("Position Camera: " + side);
+        break;
+      default:
+          throw "Cant calculate side " + side;
+    }
   }
 
   playHeliSound(){

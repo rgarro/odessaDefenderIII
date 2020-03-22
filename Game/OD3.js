@@ -85,7 +85,7 @@ class OD3 extends Game {
     this.Mi28.setGame(this);
     this.Mi28.loadModel();
     this.Mi28.setHelicopterControll();
-    //this.bgHelicopter.init();
+    this.Mi28.setCamera(this.camera);
     //this.bgHelicopter.mesh.y = 500;
     this.heliFlying = true;
   }
@@ -168,11 +168,19 @@ class OD3 extends Game {
   }
 
   setFrontView(){
-    console.log("set front view");
+    if(this.Mi28.camera_is_set){
+        this.Mi28.setCameraPosition("front");
+    }else{
+      throw "Camera must be set before setting front view";
+    }
   }
 
   setBackView(){
-    console.log("set back view");
+    if(this.Mi28.camera_is_set){
+        this.Mi28.setCameraPosition("back");
+    }else{
+      throw "Camera must be set before setting back view";
+    }
   }
 
   preRender() {
