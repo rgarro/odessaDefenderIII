@@ -84,6 +84,10 @@ class Mi28 extends ControllableModel {
         //calculateCameraDistance(side)
         console.log("distance Camera: " + side);
         break;
+      case 'right':
+        //calculateCameraDistance(side)
+        console.log("distance Camera: " + side);
+        break;
       default:
           throw "Cant calculate side distance for " + side;
     }
@@ -96,6 +100,10 @@ class Mi28 extends ControllableModel {
         console.log("Position Camera: " + side);
         break;
       case 'front':
+        this.calculateCameraDistance(side)
+        console.log("Position Camera: " + side);
+        break;
+      case 'right':
         this.calculateCameraDistance(side)
         console.log("Position Camera: " + side);
         break;
