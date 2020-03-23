@@ -183,6 +183,14 @@ class OD3 extends Game {
     }
   }
 
+  setRightView(){
+    if(this.Mi28.camera_is_set){
+        this.Mi28.setCameraPosition("right");
+    }else{
+      throw "Camera must be set before setting right view";
+    }
+  }
+
   preRender() {
     //this.cameraControl.update();
     this.scene.getObjectByName("ambient").color = new THREE.Color(0x111111);

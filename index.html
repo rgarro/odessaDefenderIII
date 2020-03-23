@@ -54,6 +54,7 @@
       <button id="startBtn">hачало/start</button>
       <button id="frontViewBtn">front view</button>
       <button id="backViewBtn">back view</button>
+      <button id="rightViewBtn">right view</button>
     </div>
     <div id="gameContainer"></div>
     <script>
@@ -72,6 +73,10 @@
 
           $("#backViewBtn").on("click",function() {
             app.setBackView();
+          }.bind(this));
+
+          $("#rightViewBtn").on("click",function() {
+            app.setRightView();
           }.bind(this));
 
           $("#frontViewBtn").on("click",function() {
