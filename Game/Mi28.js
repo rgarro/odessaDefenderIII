@@ -21,7 +21,7 @@
 class Mi28 extends ControllableModel {
   constructor() {
     super();
-    this.vehicleMeshName = "boinaAzulDeChinandega";
+    this.vehicleMeshName = "ramboDelMonte";
     this.modelUrl = "/Game/assets/models/Mi28.json";
     this.textureUrl = "/Game/assets/models/Mi28ND.png";
     this.ObjModelUrl = "/Game/assets/models/SU25/SU-25.obj";
@@ -75,48 +75,48 @@ class Mi28 extends ControllableModel {
   }
 
   calculateCameraDistance(side="back"){
+    var distance = 0;
     switch (side) {
       case 'back':
-        //calculateCameraDistance(side)
-        console.log("distance Camera: " + side);
+        distance = this.camera_distance_from_helicopter * -1;
         break;
       case 'front':
-        //calculateCameraDistance(side)
-        console.log("distance Camera: " + side);
+        distance = this.camera_distance_from_helicopter;
         break;
       case 'right':
-        //calculateCameraDistance(side)
-        console.log("distance Camera: " + side);
+        distance = 0;
         break;
         case 'left':
-          //calculateCameraDistance(side)
-          console.log("distance Camera: " + side);
+          distance = 0;
           break;
       default:
           throw "Cant calculate side distance for " + side;
     }
+    return distance;
   }
 
   setCameraPosition(side="back"){
-    switch (side) {
-      case 'back':
-        this.calculateCameraDistance(side)
-        console.log("Position Camera: " + side);
-        break;
-      case 'front':
-        this.calculateCameraDistance(side)
-        console.log("Position Camera: " + side);
-        break;
-      case 'right':
-        this.calculateCameraDistance(side)
-        console.log("Position Camera: " + side);
-        break;
-        case 'left':
-          this.calculateCameraDistance(side)
+    if(this.camera_is_set){
+      switch (side) {
+        case 'back':
+          this.camera.position.y = this.group.position.y + this.calculateCameraDistance(side);
+          break;
+        case 'front':
+          this.calculateCameraDistance(side);
           console.log("Position Camera: " + side);
           break;
-      default:
-          throw "Cant calculate side " + side;
+        case 'right':
+          this.camera.position.y = this.group.position.y + this.calculateCameraDistance(side);
+          break;
+          case 'left':
+            this.calculateCameraDistance(side);
+            console.log("Position Camera: " + side);
+            break;
+        default:
+            throw "Cant calculate side " + side;
+      }
+    }else{
+        throw "Camera must be set first";
     }
   }
 
